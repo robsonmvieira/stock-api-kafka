@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+   build: .
+   container_name: stock-kafka-api
+   command: ./.docker/start.sh
+   volumes:
+     - .:/home/node/app
+   ports:
+     - 3001:3000
+   extra_hosts:
+    - "host.docker.internal:172.17.0.1"
+# version: '3'
+
+# services:
+  
+#   app:
+#     build: .
+#     container_name: stock-kafka-api
+#     command: .docker/start.sh
+#     ports: 
+#       - 3001:3000
+#     volumes:
+#       - .:/home/node/app
